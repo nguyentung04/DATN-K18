@@ -1,7 +1,7 @@
 import React from "react";
 import { Flex } from "@chakra-ui/react";
-import Sidebar from "../components/Sidebar";
-import Navbar from "../components/Navbar";
+import Sidebar from '../../../components/Admin/Sidebar';
+import Navbar from '../../../components/Admin/Navbar';
 import { Outlet } from "react-router-dom";
 
 const Layout = () => {
