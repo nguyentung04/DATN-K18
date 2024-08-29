@@ -191,13 +191,16 @@ const Navbar = () => {
         <input type="text" placeholder="Tìm kiếm sản phẩm..." />
         <CiSearch />
       </div>
+      
       <div className="navbar-auth">
+        
         <Link to="/cart" className="cart-link">
           <i className="fas fa-shopping-cart"></i> Giỏ hàng
         </Link>
         {isLoggedIn ? (
           <>
-            <span className="navbar-username">{username}</span>
+            <Link to="/orderhistory" className="order-history-link">Đơn hàng</Link>
+            <span className="navbar-username">Xin chào | {username}</span>
             <button className="logout-button" onClick={handleLogout}>Đăng xuất</button>
           </>
         ) : (
