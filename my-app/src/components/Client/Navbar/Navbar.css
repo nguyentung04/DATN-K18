@@ -1,0 +1,230 @@
+/* Navbar container */
+.navbar {
+  background-color: #d4a373; /* Màu bò đậm */
+  padding: 10px 20px;
+  border-bottom: 1px solid #b89c6e; /* Đường viền dưới Navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Căn giữa tất cả các thành phần trong Navbar */
+  position: relative; /* Đặt position relative để dropdown-content dựa vào navbar */
+}
+
+/* Logo and Navbar Links container */
+.navbar-content {
+  display: flex;
+  align-items: center;
+  flex: 1; /* Để chiếm hết không gian giữa logo và đăng nhập/đăng ký */
+  justify-content: center; /* Căn giữa các liên kết và logo */
+  gap: 20px; /* Khoảng cách giữa các phần tử */
+}
+
+/* Logo styling */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  height: 50px; /* Chiều cao của logo */
+  width: auto; /* Đảm bảo tỉ lệ chiều cao/chiều rộng của logo */
+}
+
+/* Navbar links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Khoảng cách giữa các liên kết */
+}
+
+.navbar-links a {
+  color: #fff; /* Màu chữ của các liên kết */
+  text-decoration: none; /* Loại bỏ gạch chân khỏi liên kết */
+  padding: 10px;
+  display: flex; /* Căn chỉnh theo hàng ngang */
+  align-items: center; /* Căn giữa icon và văn bản */
+  gap: 5px; /* Khoảng cách giữa văn bản và icon */
+  transition: background-color 0.3s;
+}
+
+.navbar-links a:hover {
+  background-color: #f0e68c; /* Thay đổi màu nền khi di chuột qua liên kết */
+  border-radius: 5px; /* Làm tròn góc của liên kết khi hover */
+  color: #333; /* Thay đổi màu chữ khi di chuột qua liên kết */
+}
+
+/* Dropdown Table */
+.dropdown-table {
+  display: flex; /* Sắp xếp các bảng theo chiều ngang */
+  position: absolute; /* Đặt vị trí tuyệt đối */
+  top: 100%; /* Vị trí phía dưới Navbar */
+  left: 0; /* Căn trái với Navbar */
+  width: 100%; /* Chiếm toàn bộ chiều rộng */
+  background-color: #fff; /* Nền trắng cho dropdown */
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Đổ bóng cho dropdown */
+  z-index: 1;
+  padding: 10px;
+}
+
+/* Individual Dropdown Table Section */
+.dropdown-table .dropdown-section {
+  margin-right: 20px; /* Khoảng cách giữa các phần tử trong dropdown */
+  flex: 1; /* Để các phần tử chiếm không gian đều nhau */
+}
+
+.dropdown-table .dropdown-section h4 {
+  margin: 0;
+  padding-bottom: 10px;
+  color: #333; /* Màu chữ cho tiêu đề trong dropdown */
+  font-weight: bold; /* In đậm */
+  font-size: 1.1rem; /* Tăng kích thước lên 1 xíu */
+}
+
+.dropdown-table .dropdown-section a {
+  color: #333; /* Màu chữ của liên kết */
+  text-decoration: none; /* Loại bỏ gạch chân */
+  padding: 5px 0;
+  display: block;
+}
+
+.dropdown-table .dropdown-section a:hover {
+  background-color: #f1f1f1; /* Màu nền khi hover các liên kết trong dropdown */
+}
+
+/* Search Bar */
+.navbar-search {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Khoảng cách giữa ô tìm kiếm và icon tìm kiếm */
+}
+
+.navbar-search input {
+  padding: 5px;
+  border: 1px solid #b89c6e; /* Đường viền của ô tìm kiếm */
+  border-radius: 4px; /* Bo góc ô tìm kiếm */
+  outline: none;
+}
+
+.navbar-search input::placeholder {
+  color: #888; /* Màu chữ placeholder */
+}
+
+/* Search Button */
+.navbar-search button {
+  padding: 5px;
+  border: 1px solid #b89c6e;
+  border-left: none;
+  background-color: #555; /* Màu nền nút tìm kiếm */
+  color: #fff;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+}
+
+.navbar-search button:hover {
+  background-color: #333; /* Màu nền nút tìm kiếm khi hover */
+}
+
+/* Authentication and Cart */
+.navbar-auth {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Khoảng cách giữa các phần tử */
+  margin: 11px;
+}
+
+ .cart-link {
+  color: #fff;
+  text-decoration: none;
+}
+.navbar-auth .order-history-link{
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-username {
+  color: #fff; /* Màu chữ của tên đăng nhập */
+}
+
+.logout-button {
+  padding: 5px 10px;
+  background-color: #f00; /* Màu nền nút đăng xuất */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.logout-button:hover {
+  background-color: #c00; /* Màu nền nút đăng xuất khi hover */
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  display: flex; /* Căn chỉnh theo hàng ngang */
+  align-items: center; /* Căn giữa icon và văn bản */
+  gap: 5px; /* Khoảng cách giữa văn bản và icon */
+  transition: background-color 0.3s;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff; /* Nền trắng cho dropdown */
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Đổ bóng cho dropdown */
+  z-index: 1;
+  padding: 10px;
+  white-space: nowrap; /* Ngăn chặn xuống dòng các phần tử */
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex; /* Hiển thị dropdown khi hover */
+  flex-direction: row; /* Sắp xếp các phần tử theo chiều ngang */
+}
+
+.dropdown-section {
+  margin-right: 20px;
+}
+
+.dropdown-section h4 {
+  margin: 0;
+  padding-bottom: 10px;
+  color: #333; /* Màu chữ cho tiêu đề trong dropdown */
+  font-weight: bold; /* In đậm */
+  font-size: 1.1rem; /* Tăng kích thước lên 1 xíu */
+}
+
+.dropdown-section a {
+  color: #333; /* Màu chữ của liên kết */
+  text-decoration: none; /* Loại bỏ gạch chân */
+  padding: 5px 0;
+  display: block;
+}
+
+.dropdown-section a:hover {
+  background-color: #f1f1f1; /* Màu nền khi hover các liên kết trong dropdown */
+}
+
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-search input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
+
+.navbar-search .CiSearch {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
