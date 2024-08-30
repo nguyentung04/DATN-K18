@@ -1,11 +1,11 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Dashboard from "../pages/Admin/Dashboard";
-import ProductsRoutes from "../pages/Admin/products/router";
-import UserRoutes from "../pages/Admin/user/router";
-import OrdersRoutes from "../pages/Admin/orders/router";
-import CategoryRoutes from "../pages/Admin/categories/router";
-import CommentsRoutes from "../pages/Admin/comments/router";
+import Dashboard from "../pages/admin/Dashboard";
+import ProductsRoutes from "../pages/admin/products/router";
+import UserRoutes from "../pages/admin/user/router";
+import OrdersRoutes from "../pages/admin/orders/router";
+import CategoryRoutes from "../pages/admin/categories/router";
+import CommentsRoutes from "../pages/admin/comments/router";
 
 const AdminRoutes = () => {
   // Lấy thông tin từ localStorage
