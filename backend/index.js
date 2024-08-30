@@ -3,9 +3,13 @@ const cors = require("cors");
 const path = require("path");
 const multer = require("multer");
 const fs = require("fs");
-const Routes = require("./routes/Routes");
-const commentsRoutes = require("./routes/commentsRoutes");
-const comment_detailRoutes = require("./routes/comment_detailRoute");
+
+const userRoutes = require("./routes/user");
+const productRoutes = require("./routes/product");
+const categoryRoutes = require("./routes/category");
+const orderRoutes = require("./routes/order");
+const orderDetailRoutes = require("./routes/orderdetail");
+const authRoutes = require("./routes/auth");
 
 const app = express();
 app.use(express.json());
@@ -49,10 +53,13 @@ app.post("/api/upload/:entity", upload.single("file"), (req, res) => {
   res.json({ filePath: `${file.filename}` }); // Trả về đường dẫn tệp tin
 });
 
-// Use other routes
-app.use('/api', Routes);
-app.use('/api', commentsRoutes);
-app.use('/api', comment_detailRoutes);
+// Use specific routes
+app.use('/api', userRoutes);
+app.use('/api', productRoutes);
+app.use('/api', categoryRoutes);
+app.use('/api', orderRoutes);
+app.use('/api', orderDetailRoutes);
+app.use('/api', authRoutes);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
