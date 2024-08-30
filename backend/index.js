@@ -4,6 +4,8 @@ const path = require("path");
 const multer = require("multer");
 const fs = require("fs");
 const Routes = require("./routes/Routes");
+const commentsRoutes = require("./routes/commentsRoutes");
+const comment_detailRoutes = require("./routes/comment_detailRoute");
 
 const app = express();
 app.use(express.json());
@@ -49,6 +51,8 @@ app.post("/api/upload/:entity", upload.single("file"), (req, res) => {
 
 // Use other routes
 app.use('/api', Routes);
+app.use('/api', commentsRoutes);
+app.use('/api', comment_detailRoutes);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

@@ -130,6 +130,7 @@ const ProductsTable = () => {
                     src={`http://localhost:3000/uploads/products/${product.image}`} // Sửa đường dẫn cho phù hợp với cấu hình server
                     boxSize="100px"
                     objectFit="cover"
+                    borderRadius={"22px"}
                     alt={product.name} // Cải thiện khả năng tiếp cận và kiểm tra
                   />
                 </Box>

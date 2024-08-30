@@ -12,7 +12,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
-import CategoryIcon, { HomeIcon, ProfileIcon, BagIcon, InvoiceIcon } from "../../../components/icon/icon";
+import CategoryIcon, { HomeIcon, ProfileIcon, BagIcon, InvoiceIcon, CustomIcon } from "../../../components/icon/icon";
 
 const Sidebar = () => {
   const user = {
@@ -129,6 +129,29 @@ const Sidebar = () => {
                   leftIcon={<BagIcon boxSize={5} color={isActive ? activeColor : linkColor} />}
                 >
                   Sản phẩm
+                </Button>
+              )}
+            </NavLink>     <NavLink to="/admin/comments" style={({ isActive }) => getLinkStyles({ isActive })}>
+              {({ isActive }) => (
+                <Button
+                  fontFamily="math"
+                  justifyContent="flex-start"
+                  alignItems="center"
+                  bg={isActive ? activeBg : "inherit"}
+                  color={isActive ? activeColor : linkColor}
+                  fontWeight={isActive ? "bold" : "normal"}
+                  _hover={{ bg: activeBg, textDecoration: "none" }}
+                  _active={{ bg: activeBg, color: activeColor }}
+                  mb="0.5px"
+                  mx="auto"
+                  px="16px"
+                  py="12px"
+                  borderRadius="15px"
+                  w="100%"
+                  height="50px"
+                  leftIcon={<CustomIcon boxSize={5} color={isActive ? activeColor : linkColor} />}
+                >
+                  Bình luận
                 </Button>
               )}
             </NavLink>
