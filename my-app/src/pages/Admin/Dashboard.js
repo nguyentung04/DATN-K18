@@ -28,7 +28,7 @@ const Dashboard = () => {
         >
           <Navbar />
           <Flex direction="column" p={4} mt="60px">
-            <Text fontSize="2xl" fontWeight="bold">Thống kê</Text>
+            <Text fontSize="2xl" fontWeight="bold">Tổng kết</Text>
             
             {/* Biểu đồ đường */}
             <Box mt={8} bg="white" p={4} borderRadius="md" boxShadow="md">

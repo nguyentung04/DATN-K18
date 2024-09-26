@@ -15,7 +15,7 @@ exports.featuredProducts = (req, res) => {
   FROM products
   WHERE status = 'nổi bật'
   ORDER BY created_at DESC
-  LIMIT 4;
+
 ;`,
     (err, results) => {
       if (err) {
@@ -33,7 +33,7 @@ exports.bestSellProducts = (req, res) => {
   FROM products
   WHERE status = 'bán chạy'
   ORDER BY created_at DESC
-  LIMIT 4;
+
 ;`,
     (err, results) => {
       if (err) {
@@ -50,7 +50,7 @@ exports.sellProducts = (req, res) => {
   FROM products
   WHERE status = 'khuyến mãi'
   ORDER BY created_at DESC
-  LIMIT 4;
+
 ;`,
     (err, results) => {
       if (err) {

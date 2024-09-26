@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom"; // Thêm import Link để điều hướng
+import { Link } from "react-router-dom";
 import "./OrderHistory.css";
+import { Divider } from "@chakra-ui/react";
 
 const BASE_URL = "http://localhost:3000"; // Đảm bảo BASE_URL đúng với cấu hình API của bạn
 
@@ -42,59 +43,54 @@ const OrderHistory = () => {
   }, []);
 
   const formatCurrency = (amount) => {
-    return new Intl.NumberFormat('vi-VN', {
-      style: 'currency',
-      currency: 'VND',
-      minimumFractionDigits: 0
+    return new Intl.NumberFormat("vi-VN", {
+      style: "currency",
+      currency: "VND",
+      minimumFractionDigits: 0,
     }).format(amount);
   };
 
   if (loading) {
-    return <p>Đang tải dữ liệu...</p>; // Hiển thị thông báo tải dữ liệu
+    return <p>Đang tải dữ liệu...</p>;
   }
 
   return (
     <div className="order-history">
       <h1>Lịch sử Đơn hàng</h1>
       {error && <p className="error-message">{error}</p>}
-      {orders.length > 0 ? (
-        <table className="order-table">
-          <thead>
-            <tr>
-              <th>ID Đơn hàng</th>
-              <th>Hình ảnh sản phẩm</th>
-              <th>Tổng tiền</th>
-              <th>Chi tiết</th> {/* Cập nhật tiêu đề cột */}
-            </tr>
-          </thead>
-          <tbody>
-            {orders.map((order) => (
-              <tr key={order.id}>
-                <td>{order.order_id}</td>
-                <td>
-                  {order.image ? (
-                    <img
-                      src={`${BASE_URL}/uploads/products/${order.image}`}
-                      alt={order.name}
-                      className="product-image1"
-                    />
-                  ) : (
-                    "Không có hình ảnh"
-                  )}
-                </td>
-                <td>{formatCurrency(order.total)}</td> {/* Sử dụng hàm formatCurrency */}
-                <td>
-                  <Link to={`/orders/${order.order_id}`} className="action-button detail-button">
+      <div className="orders-container">
+        {orders.length > 0
+          ? orders.map((order) => (
+              <div className="order-card">
+                <div className="order-header">
+                  <strong>Đơn hàng: #{order.order_id}</strong>
+                  <span className="order-status">Đã nhận hàng</span>
+                </div>
+                <Divider />
+                <div className="order-body">
+                  <img
+                    src={`${BASE_URL}/uploads/products/${order.image}`}
+                    alt={order.name}
+                    className="product-image"
+                  />
+
+                  <div className="order-info">
+                    <span>{order.name}</span>
+                    <span>Tổng tiền: <span className="span-price"> {formatCurrency(order.total)}</span></span>
+                  </div>
+                </div>{" "}
+                <div className="order-actions">
+                  <Link
+                    to={`/orders/${order.order_id}`}
+                    className="detail-button"
+                  >
                     Xem chi tiết
                   </Link>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      ) : (
-        !error && <p>Không có đơn hàng nào.</p>
-      )}
+                </div>
+              </div>
+            ))
+          : !error && <p>Không có đơn hàng nào.</p>}
+      </div>
     </div>
   );
 };

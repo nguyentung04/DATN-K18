@@ -31,6 +31,7 @@ const About = () => {
           Chúng tôi rất vui được nghe từ bạn! Dù bạn có câu hỏi, phản hồi hay chỉ muốn chào hỏi, hãy liên hệ với chúng tôi qua <a href="mailto:info@yourcompany.com">dhbeeply183@dhb.com</a> hoặc theo dõi chúng tôi trên các kênh truyền thông xã hội.
         </p>
       </section>
+     
     </div>
   );
 };
